@@ -15,7 +15,7 @@ import os
 from functions_qosf import clause_matrix_0, solution_states, binarize, inversion, sat, clause_matrix_1, entangle, init_vector
 import subprocess
 
-if not os.path.isdir("path/to/folder"):
+if not os.path.isdir("./QOSF")
     subprocess.run("mkdir QOSF", shell = True)
 #array_i = [1, 2, 3, 4] #input array
 #array_i = list(np.random.randint(low = 0, high = 7, size = 4, dtype = np.int64))
