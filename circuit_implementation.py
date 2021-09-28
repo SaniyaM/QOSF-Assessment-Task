@@ -72,7 +72,7 @@ def dimacs(solution_states, N):
 	return clauses			
 	
 clauses = dimacs(solution_states, N)		#array of numbers from 0 to N, excluding the solution states
-print(clauses)
+#print(clauses)
 #clauses = binarize(clauses, l)
 
 #generate dimacs file constrains
@@ -138,23 +138,14 @@ t_qc = transpile(grover_circuit, sim)
 nshots = 4096
 counts = sim.run(t_qc, shots=nshots).result().get_counts()
 
-
-
-plot_histogram(counts)
-plt.show()
-
-
-
-
-
 #for one solution state
 sol_state_count = max(counts.values())
 counts_values = list(counts.values())
 sol_state_index = counts_values.index(sol_state_count)
 counts_keys = list(counts.keys())
 sol_state = counts_keys[sol_state_index]
-print(sol_state)
-print(counts)
+#print(sol_state)
+#print(counts)
 def output_vector(counts_keys, sol_state, array_i):
 	out_vec = []
 	ind=0
@@ -162,25 +153,25 @@ def output_vector(counts_keys, sol_state, array_i):
 		if i == sol_state:
 			ind = array_i.index(int(i[bL:],2))
 			out_vec.append(bin(ind)[2:]) 
-	print(ind)
+	#print(ind)
 	return out_vec
 out_vec = output_vector(counts_keys, sol_state, array_i)
 
 print(array_i)
 #print(sol_state)
-out_vec = ['1', '2']
 #output_index = array_i.index(int(sol_state, 2))
-print(out_vec)
+#print(out_vec)
 
 def superpose(out_vec):	#initialisation vector; wont work for repeated SOLUTIONS, works for repeated input
 	output = ''	#equal superposition intialisation vector	
 	for i in out_vec:
 #		j = bin(i)[2:]
 		output += i + '/' + str(np.sqrt(len(out_vec))) + '+'
-	print(output)
+	#print(output)
 	return output
 output = superpose(out_vec)
 
-
+plot_histogram(counts)
+plt.show()
 
 
