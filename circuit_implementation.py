@@ -96,7 +96,7 @@ def sat(all_combinations, l, bL):
 	return L2
 
 #create dimacs file
-path = '../QOSF'  
+path = './QOSF'  
 
 file = 'newsat.dimacs'
 
