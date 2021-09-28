@@ -9,7 +9,7 @@ Method for the solution:
 
 1.Create two quantum superposition states, one for the address bits, and one for the value bits in the input array
 2.Since we know what the possible solution states are, create constraints (clauses in the dimacs file) for those states
-3.Initialise the quantum circuit with an equal superposition with the states from the input array
+3.Initialise the quantum circuit with an equal superposition with the states from an input array of any length and input values
 4.Create a phase oracle using the built-in operator from the dimacs file
 5.Using this oracle in the GroverOperator, implement Grover's algorithm on the composite state of address qubits and value qubits
 6.Simulate the circuit
