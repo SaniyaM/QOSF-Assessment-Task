@@ -28,14 +28,14 @@ if __name__ == "__main__":
 array_i = input_array #input array
 L=len(array_i)		#length of input array
 highest = max(array_i)	
-print(highest)
+#print(highest)
 #l = math.ceil(math.log(highest,2))
 l_b = bin(highest)[2:]
 l = len(l_b)
-print(l)
+#print(l)
 bL_b = bin(len(array_i)-1)[2:]
 bL = len(bL_b)	
-print(bL)
+#print(bL)
 N = 2**l
 #print(highest)
 #print(l)
@@ -52,15 +52,15 @@ sol_state_2_1 = [solution_states[1]]*(len(array_i))
 sol_state_1_2 = entangle(sol_state_1_1,l,bL)
 sol_state_2_2 = entangle(sol_state_2_1,l,bL)
 
-print('sol_state_1_2 = {}'.format(sol_state_1_2))
-print('sol_state_2_2 = {}'.format(sol_state_2_2))
+#print('sol_state_1_2 = {}'.format(sol_state_1_2))
+##print('sol_state_2_2 = {}'.format(sol_state_2_2))
 def remove(sol_state_1_2, all_combinations):
 	for i in sol_state_1_2:
 		all_combinations.remove(int(i,2))
 	return all_combinations
 clauses_1 = remove(sol_state_1_2, clauses_0)	#remove solution states
 clauses = remove(sol_state_2_2, clauses_1)	#final all_combinations
-print(clauses)
+#print(clauses)
 
 #create dimacs file
 path = '../QOSF'  
@@ -93,7 +93,7 @@ def bin2int(init_vec_b):
 init_vec_d = bin2int(init_vec_b)	#decimal values of |x,w_x> 
 init_vec = init_vector(init_vec_d, 2**(l+bL))	#normalised initialisation vector 
 #init_vec = [1/np.sqrt(2**(l+bL))]*(2**(l+bL))
-print('init_vec ={}'.format(init_vec))
+#print('init_vec ={}'.format(init_vec))
 grover_circuit = QuantumCircuit(l+bL)	#make circuit
 
 grover_circuit.initialize(init_vec)	#initialise circuit
@@ -119,8 +119,8 @@ counts_values = list(counts.values())
 sol_state_index = counts_values.index(sol_state_count)
 counts_keys = list(counts.keys())
 sol_state = counts_keys[sol_state_index]
-print(sol_state)
-print(counts)
+#print(sol_state)
+#print(counts)
 def output_vector(counts_keys, sol_state, array_i):
 	out_vec = []
 	ind=0
@@ -128,14 +128,14 @@ def output_vector(counts_keys, sol_state, array_i):
 		if i == sol_state:
 			ind = array_i.index(int(i[bL:],2))
 			out_vec.append(bin(ind)[2:]) 
-	print(ind)
+	#print(ind)
 	return out_vec
 out_vec = output_vector(counts_keys, sol_state, array_i)
 
-print(array_i)
+#print(array_i)
 #print(sol_state)
 
-print(out_vec)
+#print(out_vec)
 
 def superpose(out_vec):	
 	output = ''		
