@@ -63,7 +63,7 @@ clauses = remove(sol_state_2_2, clauses_1)	#final all_combinations
 #print(clauses)
 
 #create dimacs file
-path = '../QOSF'  
+path = './QOSF'  
 
 file = 'newsat.dimacs'
 
