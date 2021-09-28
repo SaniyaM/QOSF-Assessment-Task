@@ -110,8 +110,8 @@ print(grover_circuit.draw(output='text'))	#print the circuit and gates
 
 sim = Aer.get_backend('aer_simulator')		#simulator
 t_qc = transpile(grover_circuit, sim)	
-shotsy = 4096
-counts = sim.run(t_qc, shots=shotsy).result().get_counts()
+nshots = 4096
+counts = sim.run(t_qc, shots=nshots).result().get_counts()
 
 #for one solution state
 sol_state_count = max(counts.values())
@@ -121,7 +121,7 @@ counts_keys = list(counts.keys())
 sol_state = counts_keys[sol_state_index]
 print(sol_state)
 print(counts)
-def output_vector(counts_keys, counts_values, shots, sol_state, array_i):
+def output_vector(counts_keys, sol_state, array_i):
 	out_vec = []
 	ind=0
 	for i in counts_keys:
@@ -130,7 +130,7 @@ def output_vector(counts_keys, counts_values, shots, sol_state, array_i):
 			out_vec.append(bin(ind)[2:]) 
 	print(ind)
 	return out_vec
-out_vec = output_vector(counts_keys, counts_values, shotsy, sol_state, array_i)
+out_vec = output_vector(counts_keys, sol_state, array_i)
 
 print(array_i)
 #print(sol_state)
