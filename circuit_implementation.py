@@ -16,10 +16,17 @@ import subprocess
 from functions_qosf import clause_matrix_0, solution_states, binarize, inversion, sat, clause_matrix_1, entangle, init_vector
 
 
-if not os.path.isdir("path/to/folder"):
+if not os.path.isdir("./QOSF"):
     subprocess.run("mkdir QOSF", shell = True)
 
-array_i = [1, 2, 3, 4] #input array; accept input, or create a random array - consult qosf doc
+#array_i = [1, 2, 3, 4] #input array; accept input, or create a random array - consult qosf doc
+
+if __name__ == "__main__":
+	enter = """\nEnter input array\n"""
+	input_array = [int(i) for i in input(enter).split()]
+    
+array_i = input_array #input array
+
 print(array_i)
 L=len(array_i)		#length of input array
 highest = max(array_i)	
