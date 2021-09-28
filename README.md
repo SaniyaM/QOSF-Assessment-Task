@@ -18,8 +18,9 @@ Method for the solution:
 
 Limitations:
 Both the solutions allow the location of a single solution state in the input array, but fail if there are repeated solutions or more than one solution.\
-circuit_implementation.py does not amplify the solution state if there are repeated values in the input array.
+circuit_implementation.py does not amplify the solution state if there are repeated values in the input array.\
 
-Currently, 
+The files are created and run in a folder called QOSF.\
+The dimacs file for the phase oracle is created within the solution code.\
 
 
