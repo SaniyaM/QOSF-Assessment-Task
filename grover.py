@@ -127,7 +127,7 @@ def output_vector(counts_keys, sol_state, array_i):
 	for i in counts_keys:
 		if i == sol_state:
 			ind = array_i.index(int(i[bL:],2))
-			out_vec.append(bin(ind)[2:]) 
+			out_vec.append(bin(ind)[2:].zfill(bL)) 
 	#print(ind)
 	return out_vec
 out_vec = output_vector(counts_keys, sol_state, array_i)
@@ -140,7 +140,7 @@ out_vec = output_vector(counts_keys, sol_state, array_i)
 def superpose(out_vec):	
 	output = ''		
 	for i in out_vec:
-		output += '|'+ i + '/' + 'sqrt({})'.format(len(out_vec)) + '> '
+		output += '|'+ i +  '>*'+ '1/sqrt({})'.format(len(out_vec))
 		
 	return output
 	
