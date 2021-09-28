@@ -155,7 +155,7 @@ counts_keys = list(counts.keys())
 sol_state = counts_keys[sol_state_index]
 print(sol_state)
 print(counts)
-def output_vector(counts_keys, counts_values, shots, sol_state, array_i):
+def output_vector(counts_keys, sol_state, array_i):
 	out_vec = []
 	ind=0
 	for i in counts_keys:
@@ -164,7 +164,7 @@ def output_vector(counts_keys, counts_values, shots, sol_state, array_i):
 			out_vec.append(bin(ind)[2:]) 
 	print(ind)
 	return out_vec
-out_vec = output_vector(counts_keys, counts_values, nshots, sol_state, array_i)
+out_vec = output_vector(counts_keys, sol_state, array_i)
 
 print(array_i)
 #print(sol_state)
