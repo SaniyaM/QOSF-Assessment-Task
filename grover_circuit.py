@@ -13,7 +13,8 @@ from qiskit.quantum_info import DensityMatrix, Operator, Statevector
 # import basic plot tools
 import os
 from functions_qosf import clause_matrix_0, solution_states, binarize, inversion, sat, clause_matrix_1, entangle, init_vector
-
+if not os.path.isdir("path/to/folder"):
+    subprocess.run("mkdir QOSF", shell = True)
 array_i = [1, 5, 7, 10] #input array; accept input, or create a random array - consult qosf doc
 print(array_i)
 L=len(array_i)		#length of input array
