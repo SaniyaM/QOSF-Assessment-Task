@@ -1,6 +1,9 @@
 # QOSF-Assessment-Task
 Solution for QOSF Assessment Task 2021
 
+Added grover_ciruit.py, circuit implementation of the search algorithm. Need to add correct oracle gate.
+
+
 Two versions of the incomplete solution have been implemented here. 
 
 1. partial_circuit.py is a partial solution using Grover's algorithm, implemented on a quantum circuit using Qiskit. 
